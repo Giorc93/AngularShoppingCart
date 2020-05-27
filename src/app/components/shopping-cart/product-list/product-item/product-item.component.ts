@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Product } from '../../../../models/product';
 
 @Component({
   selector: 'app-product-item',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductItemComponent implements OnInit {
 
-  constructor() { }
+
+  @Input() productItem!: Product  //Setting the productItem property as an input from de parent. Using ! to avoid Typescript error due to strictPropertyInitialization
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

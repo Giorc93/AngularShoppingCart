@@ -1,5 +1,7 @@
 <div class="row">
-    <div class="col-md-4" *ngFor='let i of [1,2,3,4,5,6]'>
-        <app-product-item></app-product-item>
+    <!--Looping through the array of products to get each product into a card-->
+    <div class="col-md-4" *ngFor='let product of productList'>
+        <!--[productItem]="product" Sends the product data dinamically to the product item component-->
+        <app-product-item [productItem]='product'></app-product-item>
     </div>
 </div>
