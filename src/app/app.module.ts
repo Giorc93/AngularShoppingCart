@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';  //Importing HttpClientModule to get the API Integration working
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -26,7 +27,8 @@ import { ProductItemComponent } from './components/shopping-cart/product-list/pr
     ProductItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule  //Registering HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

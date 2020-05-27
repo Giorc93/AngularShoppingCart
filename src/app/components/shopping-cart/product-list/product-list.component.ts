@@ -16,7 +16,10 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService) { } //Dependency injection of ProductService
 
   ngOnInit(): void {  //Executes after the component is loaded succesfuly
-    this.productList = this.productService.getProducts() //Loads the product through the getProducts method (Loading data)
+    this.productService.getProducts().subscribe((products) => { //Loads the product through the getProducts method (Loading data). After the observable is retrieved from the API, must specify the data type so and observable will not be assigned to a Product type (array)
+      this.productList = products;
+      console.log(products)
+    })
   }
 
 }
