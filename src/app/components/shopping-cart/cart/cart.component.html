@@ -1,9 +1,13 @@
-<ul class="list-group">
-    <li class="list-group-item" *ngFor="let i of [1,2,3,4,5]">
-        <app-cart-item></app-cart-item>
+<!--Creating condition, if the cartItem array is empty, the empty alert will show up-->
+<div *ngIf='cartItems.length === 0' class="alert alert-info">No Items Added</div>
+
+<!--If there are added items, the list of the items and their properties will be displayed-->
+<ul *ngIf='cartItems.length > 0' class="list-group">
+    <li class="list-group-item" *ngFor="let item of cartItems">
+        <app-cart-item [cartItem]='item'></app-cart-item>
     </li>
 
     <li class="list-group-item active">
-        <strong>Total </strong>{{1100 | currency:'USD'}}
+        <strong>Total </strong>{{ cartTotal | currency:'USD'}}
     </li>
 </ul>
